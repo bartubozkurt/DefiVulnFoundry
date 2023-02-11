@@ -1,8 +1,4 @@
-# DeFiVulnLabs
-This was an internal Web3 solidity security training in [XREX](https://xrex.io/). I want to share these materials with everyone interested in Web3 security and how to find vulnerabilities in code and exploit them. Every vulnerability testing uses Foundry. Faster and easier!
-
-A collection of vulnerable code snippets taken from [Solidity by Example](https://solidity-by-example.org/), [SWC Registry](https://swcregistry.io/) and [Blockchain CTF](https://github.com/blockthreat/blocksec-ctfs), etc.  
-##### Education only! Please do not use it in production.
+# DeFi Vulnerabilities Foundry
 
 ## Getting Started
 
@@ -71,42 +67,3 @@ A collection of vulnerable code snippets taken from [Solidity by Example](https:
 * [Unchecked return value](src/test/Returnvalue.sol) : 
   * Some tokens (like USDT) don't correctly implement the EIP20 standard and their transfer/ transferFrom function return void instead of a success boolean. Calling these functions with the correct EIP20 function signatures will always revert.
   
-## Bug Reproduce
-### 20220714 Sherlock Yield Strategy Bug - Cross-protocol Reentrancy
-#### Bounty: $250K [POC](https://github.com/sherlock-protocol/bug-poc/) | [Reference](https://mirror.xyz/0xE400820f3D60d77a3EC8018d44366ed0d334f93C/LOZF1YBcH1eBdxlC6HP223cAMeTpNgQ-Kc4EjQuxmGA)
-
-
-### 20220623 Sense Finance - Access control
-
-Missing access control in onSwap()
-#### Bounty: $50,000
-Testing
-```sh
-forge test --contracts ./src/test/SenseFinance_exp.sol -vv 
-```
-#### Link reference
-https://medium.com/immunefi/sense-finance-access-control-issue-bugfix-review-32e0c806b1a0
-
-## Spotthebugchallenge
-* [Immunefi #spotthebugchallenge 1](src/test/Immunefi_ch1.sol) : 
-  * Incorrect check msg.value, we can mint many NFTs with 1 ETH.
-* [Immunefi #spotthebugchallenge 2](src/test/Immunefi_ch2.sol) 
-
-## Link reference
-
-* [Mastering Ethereum - Smart Contract Security](https://github.com/ethereumbook/ethereumbook/blob/develop/09smart-contracts-security.asciidoc)
- 
-* [Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices/attacks/)
-
-* [Awesome-Smart-Contract-Security](https://github.com/saeidshirazi/Awesome-Smart-Contract-Security)
-
-* [(Not So) Smart Contracts](https://github.com/crytic/not-so-smart-contracts)
-
-* [Smart Contract Attack Vectors](https://github.com/kadenzipfel/smart-contract-attack-vectors)
-
-* [Secureum Security Pitfalls 101](https://secureum.substack.com/p/security-pitfalls-and-best-practices-101?s=r)
-
-* [Secureum Security Pitfalls 201](https://secureum.substack.com/p/security-pitfalls-and-best-practices-201?s=r)
-* [How to Secure Your Smart Contracts: 6 Solidity Vulnerabilities and how to avoid them (Part 1)](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-1-c33048d4d17d)[(Part 2)](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-2-730db0aa4834)
-* [Top 10 DeFi Security Best Practices](https://blog.chain.link/defi-security-best-practices/)
-
